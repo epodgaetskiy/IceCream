@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Заголовок</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Bootstrap v3.3.4 Grid Styles -->
+	<style>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{font-size:2em;margin:0.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:rgba(0,0,0,0)}body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}input,button,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:hover,a:focus{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}.img-responsive{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out;display:inline-block;max-width:100%;height:auto}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role="button"]{cursor:pointer}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.container-fluid{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}.row{margin-left:-15px;margin-right:-15px}.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12{float:left}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}@media (min-width:768px){.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12{float:left}.col-sm-12{width:100%}.col-sm-11{width:91.66666667%}.col-sm-10{width:83.33333333%}.col-sm-9{width:75%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-6{width:50%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-3{width:25%}.col-sm-2{width:16.66666667%}.col-sm-1{width:8.33333333%}.col-sm-pull-12{right:100%}.col-sm-pull-11{right:91.66666667%}.col-sm-pull-10{right:83.33333333%}.col-sm-pull-9{right:75%}.col-sm-pull-8{right:66.66666667%}.col-sm-pull-7{right:58.33333333%}.col-sm-pull-6{right:50%}.col-sm-pull-5{right:41.66666667%}.col-sm-pull-4{right:33.33333333%}.col-sm-pull-3{right:25%}.col-sm-pull-2{right:16.66666667%}.col-sm-pull-1{right:8.33333333%}.col-sm-pull-0{right:auto}.col-sm-push-12{left:100%}.col-sm-push-11{left:91.66666667%}.col-sm-push-10{left:83.33333333%}.col-sm-push-9{left:75%}.col-sm-push-8{left:66.66666667%}.col-sm-push-7{left:58.33333333%}.col-sm-push-6{left:50%}.col-sm-push-5{left:41.66666667%}.col-sm-push-4{left:33.33333333%}.col-sm-push-3{left:25%}.col-sm-push-2{left:16.66666667%}.col-sm-push-1{left:8.33333333%}.col-sm-push-0{left:auto}.col-sm-offset-12{margin-left:100%}.col-sm-offset-11{margin-left:91.66666667%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-0{margin-left:0}}@media (min-width:992px){.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12{float:left}.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}.col-md-pull-12{right:100%}.col-md-pull-11{right:91.66666667%}.col-md-pull-10{right:83.33333333%}.col-md-pull-9{right:75%}.col-md-pull-8{right:66.66666667%}.col-md-pull-7{right:58.33333333%}.col-md-pull-6{right:50%}.col-md-pull-5{right:41.66666667%}.col-md-pull-4{right:33.33333333%}.col-md-pull-3{right:25%}.col-md-pull-2{right:16.66666667%}.col-md-pull-1{right:8.33333333%}.col-md-pull-0{right:auto}.col-md-push-12{left:100%}.col-md-push-11{left:91.66666667%}.col-md-push-10{left:83.33333333%}.col-md-push-9{left:75%}.col-md-push-8{left:66.66666667%}.col-md-push-7{left:58.33333333%}.col-md-push-6{left:50%}.col-md-push-5{left:41.66666667%}.col-md-push-4{left:33.33333333%}.col-md-push-3{left:25%}.col-md-push-2{left:16.66666667%}.col-md-push-1{left:8.33333333%}.col-md-push-0{left:auto}.col-md-offset-12{margin-left:100%}.col-md-offset-11{margin-left:91.66666667%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-9{margin-left:75%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-6{margin-left:50%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-3{margin-left:25%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-0{margin-left:0}}@media (min-width:1200px){.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}.col-lg-pull-12{right:100%}.col-lg-pull-11{right:91.66666667%}.col-lg-pull-10{right:83.33333333%}.col-lg-pull-9{right:75%}.col-lg-pull-8{right:66.66666667%}.col-lg-pull-7{right:58.33333333%}.col-lg-pull-6{right:50%}.col-lg-pull-5{right:41.66666667%}.col-lg-pull-4{right:33.33333333%}.col-lg-pull-3{right:25%}.col-lg-pull-2{right:16.66666667%}.col-lg-pull-1{right:8.33333333%}.col-lg-pull-0{right:auto}.col-lg-push-12{left:100%}.col-lg-push-11{left:91.66666667%}.col-lg-push-10{left:83.33333333%}.col-lg-push-9{left:75%}.col-lg-push-8{left:66.66666667%}.col-lg-push-7{left:58.33333333%}.col-lg-push-6{left:50%}.col-lg-push-5{left:41.66666667%}.col-lg-push-4{left:33.33333333%}.col-lg-push-3{left:25%}.col-lg-push-2{left:16.66666667%}.col-lg-push-1{left:8.33333333%}.col-lg-push-0{left:auto}.col-lg-offset-12{margin-left:100%}.col-lg-offset-11{margin-left:91.66666667%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-0{margin-left:0}}.clearfix:before,.clearfix:after,.container:before,.container:after,.container-fluid:before,.container-fluid:after,.row:before,.row:after{content:" ";display:table}.clearfix:after,.container:after,.container-fluid:after,.row:after{clear:both}.center-block{display:block;margin-left:auto;margin-right:auto}.pull-right{float:right !important}.pull-left{float:left !important}.hide{display:none !important}.show{display:block !important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none !important}.affix{position:fixed}@-ms-viewport{width:device-width}.visible-xs,.visible-sm,.visible-md,.visible-lg{display:none !important}.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block{display:none !important}@media (max-width:767px){.visible-xs{display:block !important}table.visible-xs{display:table}tr.visible-xs{display:table-row !important}th.visible-xs,td.visible-xs{display:table-cell !important}}@media (max-width:767px){.visible-xs-block{display:block !important}}@media (max-width:767px){.visible-xs-inline{display:inline !important}}@media (max-width:767px){.visible-xs-inline-block{display:inline-block !important}}@media (min-width:768px) and (max-width:991px){.visible-sm{display:block !important}table.visible-sm{display:table}tr.visible-sm{display:table-row !important}th.visible-sm,td.visible-sm{display:table-cell !important}}@media (min-width:768px) and (max-width:991px){.visible-sm-block{display:block !important}}@media (min-width:768px) and (max-width:991px){.visible-sm-inline{display:inline !important}}@media (min-width:768px) and (max-width:991px){.visible-sm-inline-block{display:inline-block !important}}@media (min-width:992px) and (max-width:1199px){.visible-md{display:block !important}table.visible-md{display:table}tr.visible-md{display:table-row !important}th.visible-md,td.visible-md{display:table-cell !important}}@media (min-width:992px) and (max-width:1199px){.visible-md-block{display:block !important}}@media (min-width:992px) and (max-width:1199px){.visible-md-inline{display:inline !important}}@media (min-width:992px) and (max-width:1199px){.visible-md-inline-block{display:inline-block !important}}@media (min-width:1200px){.visible-lg{display:block !important}table.visible-lg{display:table}tr.visible-lg{display:table-row !important}th.visible-lg,td.visible-lg{display:table-cell !important}}@media (min-width:1200px){.visible-lg-block{display:block !important}}@media (min-width:1200px){.visible-lg-inline{display:inline !important}}@media (min-width:1200px){.visible-lg-inline-block{display:inline-block !important}}@media (max-width:767px){.hidden-xs{display:none !important}}@media (min-width:768px) and (max-width:991px){.hidden-sm{display:none !important}}@media (min-width:992px) and (max-width:1199px){.hidden-md{display:none !important}}@media (min-width:1200px){.hidden-lg{display:none !important}}.visible-print{display:none !important}@media print{.visible-print{display:block !important}table.visible-print{display:table}tr.visible-print{display:table-row !important}th.visible-print,td.visible-print{display:table-cell !important}}.visible-print-block{display:none !important}@media print{.visible-print-block{display:block !important}}.visible-print-inline{display:none !important}@media print{.visible-print-inline{display:inline !important}}.visible-print-inline-block{display:none !important}@media print{.visible-print-inline-block{display:inline-block !important}}@media print{.hidden-print{display:none !important}}</style>
+
+		<link rel="stylesheet" href="css/normalize.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<!-- <link rel="stylesheet" href="css/fonts.min.css"> -->
+		<link rel="stylesheet" href="css/main.min.css">
+		<link rel="stylesheet" type="text/css" href="libs/slick/slick.css"/>
+
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="header_menu">
+			<img src="img/icon-menu.png" alt="" class="header__icon-menu" width="20" height="14">
+			<p>Меню</p>
+		</div>
+		<div class="header_number">
+			<p>8 (495) 223 55 11</p>
+			<button class="call-me">Заказать звонок</button>
+		</div>
+		<div class="container-content">
+			<img src="img/logo.png" alt="" class="header_logo" width="227" height="160">
+			<div class="header_about">
+				<h2>Порадуйте своих гостей</h2>
+				<h2>натуральным вкусом мороженого и сорбетов,</h2>
+				<h2>сделанных по советским <p>ГОСТ</p>ам</h2>
+			</div>
+			<ul class="header_weigher">
+				<li>Оптовые поставки</li>
+				<li class="weigher_circle"><span>от</span><p class="weigher--digit">15</p><span>кг</span></li>
+				<li>от производителя</li>
+			</ul>	
+			<form class="header_form" method="POST">
+				<p>Получите оптовый прайс <span>прямо сейчас</span></p>
+				<div class="header__input-container">
+					<input type="tel" placeholder="Телефон" required>
+					<input type="submit" value="Получить прайс">
+				</div>
+			</form>
+		</div>
+	</header>
+	<section class="technology">
+		<h3><p>Технология</p> производства</h3>
+		<div class="container-content">
+			<div class="technology_slider">
+				<ul class="nav-slider">
+					<li class="active">Пастеризация</li>
+					<li>Созревание</li>
+					<li>Фризеровка</li>
+					<li>Хранение</li>
+				</ul>
+				<div class="technology__slide">
+					<div class="technology__slide-wrapper clearfix">
+						<div class="slide--img">
+							<img src="img/tech-slide-img-1.jpg" alt="" width="470" height="300">
+						</div>
+						<div class="slide--content">
+							<p>Нагревание исходных продуктов до 85 градусов Цельсия и последующая выдержка смеси в течение 20 мин. В это время погибают болезнетворные микроорганизмы и компоненты смеси соединяются друг с другом.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="look-serf">Посмотреть сертификаты</button>
+			<img src="img/border-dec.png" alt="" class="border-decoration" width="110" height="2">
+			<h4>Посмотрите видео <p>о нашем производстве</p></h4>
+			<div class="video-container">
+				<iframe src="https://player.vimeo.com/video/85493074" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+		<div class="fill-form">
+			<div class="fill-form_container">
+				<h2>Заполните форму</h2>
+				<p class="about-price">Получите прайс и узнайте о специальных поедложениях для вас</p>
+				<p>Кого вы представляете?</p>
+				<div class="button-container">
+					<a href="" class="fill-form__btn">Ресторан, бар, кафе</a>
+					<a href="" class="fill-form__btn">Компания-поставщик</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="tasting">
+		<h3>Открытая дегустация <p>Wonder Ice</p></h3>
+		<div class="video-container video-position">
+			<iframe src="https://player.vimeo.com/video/85493074" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</section>
+	<section class="natural">
+		<img src="img/border-dec.png" alt="" class="border-decoration" width="110" height="2">
+		<h4>Почему мы<p>не используем</p>красители<br>и исскуственные ароматизаторы?</h4>
+		<div class="container-content">
+			<div class="natural_slider">
+				<div class="natural--wrapper clearfix">
+					<div class="natural__slide column-4">
+						<img src="img/natural-img-1.png" alt="" class="natural--img" width="100" height="100">
+						<p class="natural--text">Наша цель —<br>вернуть натуральнный<br>естественный<br>вкус и цвет мороженного</p>
+					</div>
+					<div class="natural__slide column-4">
+						<img src="img/natural-img-2.png" alt="" class="natural--img" width="100" height="100">
+						<p class="natural--text">Не пытаемся<br>улучшить, то что сделано<br>самой Природой,<br>ее творения<br>уже совершенно</p>
+					</div>
+					<div class="natural__slide column-4">
+						<img src="img/natural-img-3.png" alt="" class="natural--img" width="100" height="100">
+						<p class="natural--text">Не экономим<br>на количестве ягод<br>и фруктов</p>
+					</div>
+					<div class="natural__slide column-4">
+						<img src="img/natural-img-4.png" alt="" class="natural--img" width="100" height="100">
+						<p class="natural--text">Делаем для себя,<br>а мы предпочитаем<br>натуральное</p>
+					</div>
+				</div>
+				<img src="img/natural-dec.png" alt="" class="natural-dec" width="722" height="102">
+			</div>
+		</div>
+		<h5 class="garant--text">Гарантия<p>100%</p>замены продукции за наш счет по требованию заказчика</h5>
+	</section>
+	<section class="order-probes">
+		<h3>Закажите <p>пробники</p> бесплатно</h3>
+		<div class="container-content">
+			<div class="order-probes_content clearfix">
+				<img src="img/probes.jpg" alt="" class="order-probes--img">
+				<form class="order-probes__form" method="POST">
+					<p>Закажите пробники, и мы привезем вам<br>нашу продукцию уже завтра!</p>
+					<div class="input-wrapper">
+						<input type="text" placeholder="Имя" required>
+						<input type="tel" placeholder="Телефон" required>
+					</div>
+					<img src="img/border-dec-form.png" alt="" class="border-decoration">
+					<input type="submit" value="Отправить">
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="feedbacks">
+		<h3>Отзывы <p>шеф-поваров</p> о Wonder Ice</h3>
+		<div class="container-content">
+			<div class="feedbacks_slider">
+				<div class="feedbacks__slide">
+					<div class="feedbacks__slide--wrapper">
+						<img src="img/feedbacks-img-1.jpg" alt="" class="slide--img">
+						<p class="slide--name">Jiro Sukiyabashi</p>
+						<p class="slide--restourant">Ресторан Jiro</p>
+					</div>
+				</div>
+				<div class="feedbacks__slide">
+					<div class="feedbacks__slide--wrapper">
+						<img src="img/feedbacks-img-1.jpg" alt="" class="slide--img">
+						<p class="slide--name">Jiro Sukiyabashi</p>
+						<p class="slide--restourant">Ресторан Jiro</p>
+					</div>
+				</div>
+				<div class="feedbacks__slide">
+					<div class="feedbacks__slide--wrapper">
+						<img src="img/feedbacks-img-1.jpg" alt="" class="slide--img">
+						<p class="slide--name">Jiro Sukiyabashi</p>
+						<p class="slide--restourant">Ресторан Jiro</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="founders">
+		<h3><p>Основатель</p> и <p>главный технолог</p> Wonder Ice</h3>
+		<div class="container-content">
+			<div class="founders_about clearfix">
+				<div class="founders_about--img">
+					<img src="img/founders.jpg" alt="">
+				</div>
+				<div class="founders_about--text">
+					<h5>Гайк и Абраам Акопян</h5>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение  к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+				</div>
+			</div>
+			<button class="read-more">Читать подробнее</button>
+			<img src="img/border-dec.png" alt="" class="border-decoration">
+			<h4>Наша <p>миссия</p></h4>
+			<p class="mission">As it camouflages the cracks, the white paint gives the Kremlin<br>a youthful air, which is not suitable for the shape and denies its past.</p>
+		</div>
+	</section>
+	<section class="products">
+		<h3>Наша <p>продукция</p></h3>
+		<div class="container-content">
+			<div class="products_slider">
+				<div class="slider__images clearfix">
+					<div class="images-small clearfix">
+						<div class="images-small_single">
+							<img src="img/product-small-img-1.jpg" alt="" class="row-item active">
+						</div>
+						<div class="images-small--wrapper">
+							<div class="images-small_row">
+								<img src="img/product-small-img-2.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-3.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-4.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-5.jpg" alt="" class="row-item">
+							</div>
+							<div class="images-small_row">
+								<img src="img/product-small-img-6.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-7.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-8.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-9.jpg" alt="" class="row-item">
+							</div>
+						</div>
+					</div>
+					<div class="image-big">
+						<img src="img/product-full-img-1.jpg" alt="" class="product--full-img">
+					</div>
+					<div class="images-small clearfix">
+						<div class="images-small_single right-column">
+							<img src="img/product-small-img-18.jpg" alt="" class="row-item .right-single">
+						</div>
+						<div class="images-small--wrapper right-column">
+							<div class="images-small_row">
+								<img src="img/product-small-img-10.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-11.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-12.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-13.jpg" alt="" class="row-item">
+							</div>
+							<div class="images-small_row">
+								<img src="img/product-small-img-14.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-15.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-16.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-17.jpg" alt="" class="row-item">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slider_info">
+					<p class="product--name">Мята с шоколадом</p>
+					<p class="product--type">Пломбир</p>
+					<p class="product--about">For a while, the Kremlin’s look remained red-brick, but in the XVIIIth century it was coated white like any other construction of its sort.</p>
+					<p class="product--info">Молоко, сливки, масло сливочное, молоко сухое обезжиренное, вода питьевая, сахар-песок, глюкоза, мятная паста, кусочки шоколада, стабилизатор-эмульгатор (гуаровая камедь, моно- и диглицериды жирных кислот).</p>
+				</div>
+			</div>
+			<a href="" class="present--download" download>Скачать презентацию</a>
+		</div>
+	</section>
+	<section class="contact">
+		<h3><p>Возвращаем</p> натуральный вкус</h3>
+		<form class="contact_form" method="POST">
+			<h5>Остались вопросы?</h5>
+			<p>Напишите сюда свой вопрос, и мы ответим на него в течении 30 минут</p>
+			<input class="input-question" type="text" placeholder="Ваш вопрос" required>
+			<div class="input--container">
+				<input type="text" placeholder="Имя" required>
+				<input type="tel" placeholder="Телефон" required>
+				<input type="submit" value="Отправить">
+			</div>
+		</form>
+	</section>
+	<section class="map">
+		<img src="img/logo-map.png" alt="" class="logo-map" width="88" height="120">
+		<div class="container-content">
+			<div class="adress">
+				<p>г. Москва, ул. Пломбирная, 20,<br>офис 298</p>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="hidden"></div>
+
+	<!--[if lt IE 9]>
+	<script src="libs/html5shiv/es5-shim.min.js"></script>
+	<script src="libs/html5shiv/html5shiv.min.js"></script>
+	<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+	<script src="libs/respond/respond.min.js"></script>
+	<![endif]-->
+
+	<script src="js/libs.js"></script>
+	<script src="js/common.js"></script>
+
+</body>
+</html>
