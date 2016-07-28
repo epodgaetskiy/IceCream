@@ -27,6 +27,7 @@
 		<!-- <link rel="stylesheet" href="css/fonts.min.css"> -->
 		<link rel="stylesheet" href="css/main.min.css">
 		<link rel="stylesheet" type="text/css" href="libs/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="libs/scrollpane/jquery.jscrollpane.css"/>
 
 </head>
 
@@ -65,7 +66,7 @@
 			</form>
 		</div>
 	</header>
-	<section class="technology">
+	<section id="technology" class="technology">
 		<h3><p>Технология</p> производства</h3>
 		<div class="container-content">
 			<div class="technology_slider">
@@ -86,19 +87,19 @@
 					</div>
 				</div>
 			</div>
-			<button class="look-serf">Посмотреть сертификаты</button>
+			<a href="" class="look-serf" download>Посмотреть сертификаты</a>
 			<img src="img/border-dec.png" alt="" class="border-decoration hidden-xs" width="110" height="2">
 			<h4 class="hidden-xs">Посмотрите видео <p>о нашем производстве</p></h4>
 			<div class="video-container">
 				<iframe src="https://player.vimeo.com/video/85493074" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div class="fill-form">
+		<div id="fill-form" class="fill-form">
 			<div class="fill-form_container">
 				<h2>Заполните форму</h2>
 				<p class="about-price hidden-xs">Получите прайс и узнайте о специальных предложениях для вас</p>
-				<p class="about-price">Получите прайс и узнайте</p>
-				<p class="about-price m-price">о специальных предложениях для вас</p>
+				<p class="about-price m-view hidden-lg hidden-md hidden-sm">Получите прайс и узнайте</p>
+				<p class="about-price m-price hidden-lg hidden-md hidden-sm">о специальных предложениях для вас</p>
 				<p>Кого вы представляете?</p>
 				<div class="button-container">
 					<a href="" class="fill-form__btn">Ресторан, бар, кафе</a>
@@ -107,13 +108,13 @@
 			</div>
 		</div>
 	</section>
-	<section class="tasting">
+	<section id="tasting" class="tasting">
 		<h3>Открытая дегустация <p>Wonder Ice</p></h3>
 		<div class="video-container video-position">
 			<iframe src="https://player.vimeo.com/video/85493074" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</section>
-	<section class="natural">
+	<section id="natural" class="natural">
 		<img src="img/border-dec.png" alt="" class="border-decoration hidden-xs" width="110" height="2">
 		<h4 class="hidden-xs">Почему мы<p>не используем</p>красители<br>и исскуственные ароматизаторы?</h4>
 		<h4 class="hidden-lg hidden-md hidden-sm">Почему мы<p>не используем</p><br>красители и исскуственные<br> ароматизаторы?</h4>
@@ -143,7 +144,7 @@
 		<h5 class="garant--text hidden-xs">Гарантия<p>100%</p>замены продукции за наш счет по требованию заказчика</h5>
 		<h5 class="garant--text hidden-lg hidden-md hidden-sm">Гарантия<p>100%</p>замены продукции<br>за наш счет по требованию заказчика</h5>
 	</section>
-	<section class="order-probes">
+	<section id="order-probes" class="order-probes">
 		<h3>Закажите <p>пробники</p> бесплатно</h3>
 		<div class="container-content">
 			<div class="order-probes_content clearfix">
@@ -160,7 +161,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="feedbacks">
+	<section id="feedbacks" class="feedbacks">
 		<h3 class="hidden-xs">Отзывы <p>шеф-поваров</p> о Wonder Ice</h3>
 		<h3 class="hidden-lg hidden-md hidden-sm">Отзывы <p>шеф-поваров</p><br>о Wonder Ice</h3>
 		<div class="container-content">
@@ -189,7 +190,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="founders">
+	<section id="founders" class="founders">
 		<h3><p>Основатель</p> и <p>главный технолог</p> Wonder Ice</h3>
 		<!-- <h3 class="hidden-lg hidden-md hidden-sm"><p>Основатель</p> и <p>главный<br>технолог</p> Wonder Ice</h3> -->
 		<div class="container-content">
@@ -213,7 +214,7 @@
 			<p class="mission hidden-lg hidden-md hidden-sm">As it camouflages the cracks, the white paint gives the Kremlin a youthful air, which is not suitable for the shape and denies its past.</p>
 		</div>
 	</section>
-	<section class="products">
+	<section id="products" class="products">
 		<h3>Наша <p>продукция</p></h3>
 		<div class="container-content">
 			<div class="products_slider hidden-xs">
@@ -273,18 +274,19 @@
 	<section class="contact">
 		<h3 class="hidden-xs"><p>Возвращаем</p> натуральный вкус</h3>
 		<h3 class="hidden-lg hidden-md hidden-sm"><p>Возвращаем</p><br>натуральный вкус</h3>
-		<form class="contact_form" method="POST">
+		<form id="contact-form" class="contact_form" method="POST">
 			<h5>Остались вопросы?</h5>
 			<p>Напишите сюда свой вопрос, и мы ответим на него в течении 30 минут</p>
-			<input class="input-question" type="text" placeholder="Ваш вопрос" required>
+			<input class="input-question hidden-xs" type="text" placeholder="Ваш вопрос">
 			<div class="input--container">
 				<input type="text" placeholder="Имя" required>
 				<input type="tel" placeholder="Телефон" required>
+				<textarea class="hidden-lg hidden-md hidden-sm" name="question" placeholder="Ваш вопрос"></textarea>
 				<input type="submit" value="Отправить">
 			</div>
 		</form>
 	</section>
-	<section class="map">
+	<section id="map" class="map">
 		<img src="img/logo-map.png" alt="" class="logo-map" width="88" height="120">
 		<div class="container-content">
 			<div class="adress">
@@ -294,7 +296,61 @@
 	</section>
 
 
-	<div class="hidden"></div>
+	<!-- Callback popup -->
+	<div class="callback-popup">
+		<div class="callback-popup_container">
+			<i class="icon-close"></i>
+			<form class="callback-form">
+				<p>Обратный звонок</p>
+				<img src="img/border-dec.png" alt="" class="border-decoration hidden-xs" width="110" height="2">
+				<div class="input--container">
+					<input type="text" placeholder="Имя" required>
+					<input type="tel" placeholder="Телефон" required>
+					<input type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Menu popup -->
+	<div class="menu-popup">
+		<div class="menu-popup_container">
+			<i class="icon-close"></i>
+			<p>Меню</p>
+			<ul class="menu-list">
+				<li><a href="#technology">Технология производства</a></li>
+				<li><a href="#fill-form">Анкета</a></li>
+				<li><a href="#tasting">Открытая дегустация</a></li>
+				<li><a href="#natural">Преимущества</a></li>
+				<li><a href="#order-probes">Заказ пробников</a></li>
+				<li><a href="#feedbacks">Отзывы шеф-поваров</a></li>
+				<li><a href="#founders">Основатели проекта</a></li>
+				<li><a href="#products">Наша продукция</a></li>
+				<li><a href="#contact-form">Остались вопросы?</a></li>
+				<li><a href="#map">Адрес</a></li>
+			</ul>
+		</div>	
+	</div>
+	<!-- Read More Popup -->
+	<div class="read-more-popup">
+		<div class="read-more-popup_container">
+			<i class="icon-close"></i>
+			<div class="container-content">
+				<h3><p>Основатель</p> и <p>главный технолог</p> Wonder Ice</h3>
+				<div class="text-container">
+					<h5>Гайк и Абраам Акопян</h5>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+					<p>Абраам родился и вырос в Армении в большой дружной семье, в которой всегда есть место уважению и любви к друг другу,  в которой есть понимание связи человека и окружающей его природы, где человек и природа — одно целое. И, что немаловажно, из поколения в поколение в семье передавалось отношение к людям вообще: «Делай добро и бросай его в воду… И оно к тебе обязательно вернется!»</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 	<!--[if lt IE 9]>
 	<script src="libs/html5shiv/es5-shim.min.js"></script>
