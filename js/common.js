@@ -19,6 +19,28 @@ $(function() {
 
 	$("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
+	//natural slider
+	$('.natural--wrapper').slick({
+  		responsive: [
+  			{
+				breakpoint: 10000,
+				settings: "unslick"
+			},
+  			{
+  				breakpoint: 767,
+	  			settings: {
+	  				unslick: false,
+					infinite: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
+					autoplay: true,
+			  		autoplaySpeed: 8000,
+			  		speed: 1000,
+	  			}
+  			}
+  		]
+	});
 	//feedback slider
 	$('.feedbacks_slider').slick({
 		infinite: true,
@@ -27,7 +49,15 @@ $(function() {
 		arrows: true,
 		autoplay: true,
   		autoplaySpeed: 8000,
-  		speed: 1000
+  		speed: 1000,
+  		responsive: [
+  			{
+  				breakpoint: 767,
+	  			settings: {
+					arrows: false
+	  			}
+  			}
+  		]
 	});
 	//function click for popup
 	function clickPopup(btn, close, popup) {
@@ -80,6 +110,38 @@ $(function() {
 	// $(".jspTrack").css("height", "200px");
 	$(".jspDrag").css("height", "40px");
 
+	//slider change technoloy
+	var btnNavTech = $(".technology .nav-slider li");
+		slideImgTech = $(".technology_slider .technology__slide .slide--img");
+		slideContentTech = $(".technology_slider .technology__slide .slide--content");
+		prevSlide = 0;
+
+	btnNavTech.first().addClass("active");
+	slideImgTech.first().addClass("active");
+	slideContentTech.first().addClass("active");
+
+	btnNavTech.click(function(e){
+
+		e.preventDefault();
+
+		var s = $(this);
+			i = btnNavTech.index(s);
+
+		if (!(s.hasClass("active"))) {
+
+			btnNavTech.removeClass("active");
+			s.addClass("active");
+
+			slideImgTech.eq(prevSlide).removeClass("active animated flipInX");
+			slideImgTech.eq(i).addClass("active animated flipInX");
+			slideContentTech.eq(prevSlide).removeClass("active animated fadeIn");
+			slideContentTech.eq(i).addClass("active animated fadeIn");
+
+			prevSlide = i;
+
+		}
+
+	})	
 
 
 });
