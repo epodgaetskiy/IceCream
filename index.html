@@ -35,7 +35,7 @@
 
 	<header class="header">
 		<div class="header_menu">
-			<img src="img/icon-menu.png" alt="" class="header__icon-menu" width="20" height="14">
+			<i class="header__icon-menu"></i>
 			<p class="hidden-xs">Меню</p>
 		</div>
 		<div class="header_number">
@@ -57,11 +57,17 @@
 				<li class="weigher_circle"><span>от</span><p class="weigher--digit">15</p><span>кг</span></li>
 				<li>от производителя</li>
 			</ul>	
+			<p class="received--price">Получите оптовый прайс <span class="hidden-xs">прямо</span> <span>сейчас</span></p>
 			<form class="header_form" method="POST">
-				<p>Получите оптовый прайс <span class="hidden-xs">прямо</span> <span>сейчас</span></p>
 				<div class="header__input-container">
-					<input type="tel" placeholder="Телефон" required>
+					<input class="input-mobile" type="tel" name="mobile" placeholder="Телефон" pattern="[0-9]{9,20}" required>
 					<input type="submit" value="Получить прайс">
+				</div>
+				<div class="form-invalid_block">
+					<div class="form-invalid__container">
+						<i class="icon-close-invalid"></i>
+						<p>Пожалуйста, введите данные!</p>
+					</div>
 				</div>
 			</form>
 		</div>
@@ -124,19 +130,46 @@
 				<iframe src="https://player.vimeo.com/video/85493074" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
-		<div id="fill-form" class="fill-form">
+		<form id="fill-form" class="fill-form">
 			<div class="fill-form_container">
 				<h2>Заполните форму</h2>
 				<p class="about-price hidden-xs">Получите прайс и узнайте о специальных предложениях для вас</p>
 				<p class="about-price m-view hidden-lg hidden-md hidden-sm">Получите прайс и узнайте</p>
 				<p class="about-price m-price hidden-lg hidden-md hidden-sm">о специальных предложениях для вас</p>
-				<p>Кого вы представляете?</p>
-				<div class="button-container">
-					<a href="" class="fill-form__btn">Ресторан, бар, кафе</a>
-					<a href="" class="fill-form__btn">Компания-поставщик</a>
+				<div class="fill-form__part">
+					<p>Кого вы представляете?</p>
+					<div class="button-container">
+						<button class="fill-form__btn">Ресторан, бар, кафе</button>
+						<button class="fill-form__btn">Компания-поставщик</button>
+					</div>
+				</div>
+				<div class="fill-form__part">
+					<p>Какую должность вы занимаете?</p>
+					<div class="button-container">
+						<button class="fill-form__btn btn-middle-size">Руководитель</button>
+						<button class="fill-form__btn btn-middle-size">Шеф-повар</button>
+						<button class="fill-form__btn btn-middle-size">Закупщик</button>
+					</div>
+				</div>
+				<div class="fill-form__part">
+					<p>Какие объемы в среднем в месяц вас интресуют?</p>
+					<div class="button-container">
+						<button class="fill-form__btn btn-small-size">До 30 кг</button>
+						<button class="fill-form__btn btn-small-size">30–50 кг</button>
+						<button class="fill-form__btn btn-small-size">От 50 кг</button>
+					</div>
+				</div>
+				<div class="fill-form__part">
+					<p class="hidden-xs">Введите ваши данные, мы вышлем наш прайс,<br>расскажем об акциях и условиях работы</p>
+					<p class="hidden-lg hidden-md hidden-sm">Введите ваши данные, мы вышлем наш прайс, расскажем об акциях и условиях работы</p>
+					<div class="input--container">
+						<input class="fill-form--name" type="text" placeholder="Имя">
+						<input class="fill-form--mobile" type="tel" placeholder="Телефон">
+						<input class="fill-form--submit" type="submit" value="Отправить">
+					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 	</section>
 	<section id="tasting" class="tasting">
 		<h3>Открытая дегустация <p>Wonder Ice</p></h3>
@@ -188,6 +221,12 @@
 					</div>
 					<img src="img/border-dec-form.png" alt="" class="border-decoration hidden-xs">
 					<input type="submit" value="Отправить">
+					<div class="form-invalid_block">
+						<div class="form-invalid__container">
+							<i class="icon-close-invalid"></i>
+							<p>Пожалуйста, введите данные!</p>
+						</div>
+					</div>
 				</form>
 			</div>
 		</div>
@@ -251,7 +290,7 @@
 				<div class="slider__images clearfix">
 					<div class="images-small clearfix">
 						<div class="images-small_single">
-							<img src="img/product-small-img-1.jpg" alt="" class="row-item active">
+							<img class="row-item active" src="img/product-small-img-1.jpg" alt="">
 						</div>
 						<div class="images-small--wrapper">
 							<div class="images-small_row">
@@ -344,7 +383,7 @@
 	<div class="menu-popup">
 		<div class="menu-popup_container">
 			<i class="icon-close"></i>
-			<p>Меню</p>
+			<p class="hidden-xs">Меню</p>
 			<ul class="menu-list">
 				<li><a href="#technology">Технология производства</a></li>
 				<li><a href="#fill-form">Анкета</a></li>
