@@ -37,6 +37,7 @@ $(function() {
 					autoplay: true,
 			  		autoplaySpeed: 8000,
 			  		speed: 1000,
+			  		dots: true,
 	  			}
   			}
   		]
@@ -54,7 +55,8 @@ $(function() {
   			{
   				breakpoint: 767,
 	  			settings: {
-					arrows: false
+					arrows: false,
+					dots: true,
 	  			}
   			}
   		]
@@ -143,5 +145,99 @@ $(function() {
 
 	})	
 
+	//fill form date
+	var fillFormDate = {};
+		fillFormParts = $(".fill-form .fill-form__part");
+		fillFormBtn = $(".fill-form .fill-form__part .fill-form__btn");
+		fillFormPartsActive = 0;
+		fillFormSetting = '';
 
+	fillFormParts.eq(fillFormPartsActive).addClass("active");
+
+	fillFormBtn.click(function(e){
+		e.preventDefault();
+
+		switch(fillFormPartsActive) {
+			case 0:
+				fillFormSetting = 'represent';
+				break;
+			case 1:
+				fillFormSetting = 'position';
+				break;
+			case 2:
+				fillFormSetting = 'volume';
+				break;
+		}
+
+		fillFormDate[fillFormSetting] = $(this).text();
+
+		fillFormParts.eq(fillFormPartsActive).removeClass("active animated flipInX");
+		fillFormPartsActive++;
+		fillFormParts.eq(fillFormPartsActive).addClass("active animated flipInX");
+
+	})
+
+	$(".fill-form--submit").click(function(e){
+		e.preventDefault();
+
+		fillFormDate.name = $(".fill-form--name").val();
+		fillFormDate.mobile = $(".fill-form--mobile").val();
+
+		console.log(fillFormDate);
+	})
+
+	//validation form
+	var form = document.querySelector('.header_form');
+		mobile = document.querySelector('.header_form .input-mobile');
+		submitForm = document.querySelector('.header_form input[type=submit'); 
+		invalidBlock = document.querySelector('.header_form .form-invalid_block');
+		invalidBlockContainer = document.querySelector('.header_form .form-invalid_block .form-invalid__container');
+		invalidBlockClose = document.querySelector('.header_form .form-invalid_block .icon-close-invalid');
+		invalidBlockText = document.querySelector('.header_form .form-invalid_block p');
+
+	submitForm.addEventListener("click", function(e){
+
+		if (!mobile.validity.valid) {
+
+			invalidBlockText.innerHTML = "Пожалуйста, введите свой мобильный телефон!"
+			
+			invalidBlock.classList.add("active");
+			invalidBlockContainer.classList.add("animated","bounceIn");
+
+			e.preventDefault();
+			
+		} else {
+			var date = mobile.value;
+			SendMail(date);
+
+		}
+
+	}, false);
+
+	invalidBlockClose.addEventListener("click", function(e){
+		e.preventDefault();
+
+		mobile.value = '';
+
+		invalidBlockContainer.classList.remove("animated","bounceIn");
+		invalidBlockContainer.classList.add("animated","bounceOut");
+		// invalidBlock.classList.remove("active");
+		setTimeout(function(){
+			invalidBlock.classList.remove("active");
+			invalidBlockContainer.classList.remove("animated","bounceOut");
+		}, 1000);
+
+	})
+
+	function SendMail(date) {
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			data: date
+	    }).done(function() {
+			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+	    });
+
+	    return false;
+	}
 });
