@@ -177,67 +177,287 @@ $(function() {
 
 	})
 
-	$(".fill-form--submit").click(function(e){
+	//validation form
+	var form = $('form');
+		submitForm = $('input[type=submit]'); 
+		invalidBlock = $('.form-invalid_block');
+		invalidBlockContainer = $('.form-invalid_block .form-invalid__container');
+		invalidBlockClose = $('.form-invalid_block .icon-close-invalid');
+		invalidBlockText = $('.form-invalid_block p');
+
+	submitForm.click(function(e){
+
 		e.preventDefault();
 
-		fillFormDate.name = $(".fill-form--name").val();
-		fillFormDate.mobile = $(".fill-form--mobile").val();
+		var i = submitForm.index($(this));
 
-		console.log(fillFormDate);
-	})
+		switch(i) {
+			case 0:
+				var name = 'underfined';
+				var mobile = document.querySelector('.header_form .input-mobile');
+				var question = 'underfined';
 
-	//validation form
-	var form = document.querySelector('.header_form');
-		mobile = document.querySelector('.header_form .input-mobile');
-		submitForm = document.querySelector('.header_form input[type=submit'); 
-		invalidBlock = document.querySelector('.header_form .form-invalid_block');
-		invalidBlockContainer = document.querySelector('.header_form .form-invalid_block .form-invalid__container');
-		invalidBlockClose = document.querySelector('.header_form .form-invalid_block .icon-close-invalid');
-		invalidBlockText = document.querySelector('.header_form .form-invalid_block p');
+				var validationState = validateForm(name, mobile, question, i);
 
-	submitForm.addEventListener("click", function(e){
+				if (validationState === true) {
+					SendMail(form.eq(i));
+				}
 
-		if (!mobile.validity.valid) {
+				break;
+			case 1:
+				var name = document.querySelector('.fill-form .input-name');
+				var mobile = document.querySelector('.fill-form .input-mobile');
+				var question = 'underfined';
 
-			invalidBlockText.innerHTML = "Пожалуйста, введите свой мобильный телефон!"
-			
-			invalidBlock.classList.add("active");
-			invalidBlockContainer.classList.add("animated","bounceIn");
+				var validationState = validateForm(name, mobile, question, i);
 
-			e.preventDefault();
-			
-		} else {
-			var date = mobile.value;
-			SendMail(date);
+				if (validationState) {
+					var info1 = document.querySelector(".input-info-1");
+					var info2 = document.querySelector(".input-info-2");
+					var info3 = document.querySelector(".input-info-3");
 
+					info1.value = fillFormDate.represent;
+					info2.value = fillFormDate.position;
+					info3.value = fillFormDate.volume;
+
+					SendMail(form.eq(i));
+				}
+				 
+				break;
+			case 2:
+				var name = document.querySelector('.order-probes .input-name');
+				var mobile = document.querySelector('.order-probes .input-mobile');
+				var question = 'underfined';
+
+				var validationState = validateForm(name, mobile, question, i);
+
+				if (validationState) {
+					SendMail(form.eq(i));
+				}
+				 
+				break;
+			case 3:
+				var name = document.querySelector('.contact_form .input-name');
+				var mobile = document.querySelector('.contact_form .input-mobile');
+				var question = document.querySelector('.contact_form .input-question');
+
+				var validationState = validateForm(name, mobile, question, i);
+
+				if (validationState) {
+					SendMail(form.eq(i));
+				}
+
+				break;
+			case 4:
+				var name = document.querySelector('.callback-form .input-name');
+				var mobile = document.querySelector('.callback-form .input-mobile');
+				var question = 'underfined';
+
+				var validationState = validateForm(name, mobile, question, i);
+
+				if (validationState) {
+					SendMail(form.eq(i));
+				}
+
+				break;
 		}
 
-	}, false);
+	});
 
-	invalidBlockClose.addEventListener("click", function(e){
+	invalidBlockClose.click(function(e){
 		e.preventDefault();
 
-		mobile.value = '';
+		var i = invalidBlockClose.index($(this));
+		var animateClose = "animated bounceOut"
+		var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
-		invalidBlockContainer.classList.remove("animated","bounceIn");
-		invalidBlockContainer.classList.add("animated","bounceOut");
-		// invalidBlock.classList.remove("active");
-		setTimeout(function(){
-			invalidBlock.classList.remove("active");
-			invalidBlockContainer.classList.remove("animated","bounceOut");
-		}, 1000);
+		invalidBlockContainer.eq(i).addClass(animateClose).one(animationEnd, function() {
+			$(this).removeClass(animateClose);
+			invalidBlock.eq(i).removeClass("active");
+        });
 
 	})
 
-	function SendMail(date) {
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: date
-	    }).done(function() {
-			alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
-	    });
+	function validateForm(name, mobile, question, i) {
+		var errorText = '';
 
-	    return false;
+		if ((validateDate(name) === "un") && (validateDate(mobile) === "-") && (validateDate(question) === "un")) {
+			errorText = "Пожалуйста, введите свой телефон!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if (((validateDate(name) !== "+") && (validateDate(mobile) !== "+")) && (validateDate(question) !== "+")) {
+			errorText = "Пожалуйста, введите свои данные!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if ((validateDate(name) === "-") && (validateDate(mobile) === "+") && (validateDate(question) !== "-")) {
+			errorText = "Пожалуйста, введите свое имя!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if ((validateDate(name) !== "-") && (validateDate(mobile) === "-") && (validateDate(question) !== "-")) {
+			errorText = "Пожалуйста, введите свой телефон!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+
+		if ((validateDate(name) !== "-") && (validateDate(mobile) === "+") && (validateDate(question) === "-")) {
+			errorText = "Пожалуйста, введите свой вопрос!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if ((validateDate(name) === "-") && (validateDate(mobile) === "+") && (validateDate(question) === "-")) {
+			errorText = "Пожалуйста, введите свое имя и вопрос!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if ((validateDate(name) === "-") && (validateDate(mobile) === "+") && (validateDate(question) === "+")) {
+			errorText = "Пожалуйста, введите свое имя!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if ((validateDate(name) === "+") && (validateDate(mobile) === "-") && (validateDate(question) === "+")) {
+			errorText = "Пожалуйста, введите свой телефон!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+
+		if ((validateDate(name) === "-") && (validateDate(mobile) === "-") && (validateDate(question) === "+")) {
+			errorText = "Пожалуйста, введите свое имя и телефон!";
+			showErrorMassage(errorText, i);
+			return false
+		}
+	
+		return true;
+
 	}
+
+	function validateDate(date) {
+		
+		if (date === 'underfined') {
+			return 'un';
+		} else {
+			if (date.validity.valid) {
+				return '+';
+			} else {
+				return '-';
+			}
+		}
+	}
+
+	function showErrorMassage(errorText, i) {
+
+		invalidBlockText.eq(i).text(errorText);
+		invalidBlock.eq(i).addClass("active");
+
+		var animateOpen = "animated bounceIn"
+		var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+		invalidBlockContainer.eq(i).addClass(animateOpen).one(animationEnd, function() {
+			$(this).removeClass(animateOpen);
+        });
+
+
+	}
+
+	function SendMail(form) {
+	    $.ajax({
+			type: "POST",
+			url: "mail.php", //Change
+			data: form.serialize()
+		}).done(function() {
+			alert("Thank you!");
+			setTimeout(function() {
+				// Done Functions
+				form.trigger("reset");
+			}, 1000);
+		});
+		return false;
+	}
+
+	//product slider
+
+	var smallImages = $(".products .slider__images .row-item");
+		bigImage = $(".products .slider__images .product--full-img");
+		slidesInfo = $(".products .slider_info");
+
+	slidesInfo.first().addClass("active");	
+
+	//for desktop
+	smallImages.click(function(e){
+		e.preventDefault();
+
+		var src = $(this).attr("src");
+			i = smallImages.index($(this));
+		smallImages.removeClass("active");
+		$(this).addClass("active");
+
+		bigImage.attr("src", src);
+
+		var animate = "animated zoomIn";
+		var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+		bigImage.addClass(animate).one(animationEnd, function() {
+			$(this).removeClass(animate);
+		});
+
+		slidesInfo.removeClass("active");
+		slidesInfo.eq(i).addClass("active");
+
+		slidesInfo.eq(i).addClass(animate).one(animationEnd, function() {
+			$(this).removeClass(animate);
+		});
+
+	})
+	//for mobile 
+	//choise product
+	var btnChoiseprodict = $(".products .slider__images--mobile .btn-product");
+		productBlock = $(".products .slider__images--mobile .images-small");
+
+	btnChoiseprodict.first().addClass("active");
+	productBlock.first().addClass("active");
+
+	btnChoiseprodict.click(function(e){
+		e.preventDefault();
+
+		var i = btnChoiseprodict.index($(this));
+
+
+		btnChoiseprodict.removeClass("active");
+		btnChoiseprodict.eq(i).addClass("active");
+		
+		productBlock.removeClass("active");
+		productBlock.eq(i).addClass("active");
+
+	});
+
+	var smallImagesM = $(".products .slider__images--mobile .row-item");
+		bigImageM = $(".products .slider__images--mobile .product--full-img");
+
+
+
+	smallImagesM.click(function(e){
+		e.preventDefault();
+
+		var src = $(this).attr("src");
+			i = smallImagesM.index($(this));
+		smallImagesM.removeClass("active");
+		$(this).addClass("active");
+
+		bigImageM.attr("src", src);
+
+		slidesInfo.removeClass("active");
+		slidesInfo.eq(i).addClass("active");
+
+	})
+
+
 });

@@ -59,9 +59,14 @@
 			</ul>	
 			<p class="received--price">Получите оптовый прайс <span class="hidden-xs">прямо</span> <span>сейчас</span></p>
 			<form class="header_form" method="POST">
+				<!-- Hidden Required Fields -->
+				<input type="hidden" name="project_name" value="IceCream">
+				<input type="hidden" name="admin_email" value="epodgaetskiy@gmail.com">
+				<input type="hidden" name="form_subject" value="Заявка с сайта">
+				<!-- END Hidden Required Fields -->
 				<div class="header__input-container">
 					<input class="input-mobile" type="tel" name="mobile" placeholder="Телефон" pattern="[0-9]{9,20}" required>
-					<input type="submit" value="Получить прайс">
+					<input class="header_form--submit" type="submit" value="Получить прайс">
 				</div>
 				<div class="form-invalid_block">
 					<div class="form-invalid__container">
@@ -130,7 +135,12 @@
 				<iframe src="https://player.vimeo.com/video/85493074" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
-		<form id="fill-form" class="fill-form">
+		<form id="fill-form" class="fill-form" method="POST">
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="IceCream">
+			<input type="hidden" name="admin_email" value="epodgaetskiy@gmail.com">
+			<input type="hidden" name="form_subject" value="Заявка с сайта">
+			<!-- END Hidden Required Fields -->
 			<div class="fill-form_container">
 				<h2>Заполните форму</h2>
 				<p class="about-price hidden-xs">Получите прайс и узнайте о специальных предложениях для вас</p>
@@ -163,9 +173,20 @@
 					<p class="hidden-xs">Введите ваши данные, мы вышлем наш прайс,<br>расскажем об акциях и условиях работы</p>
 					<p class="hidden-lg hidden-md hidden-sm">Введите ваши данные, мы вышлем наш прайс, расскажем об акциях и условиях работы</p>
 					<div class="input--container">
-						<input class="fill-form--name" type="text" placeholder="Имя">
-						<input class="fill-form--mobile" type="tel" placeholder="Телефон">
+						<!-- Hidden Required Fields -->
+						<input class="input-info-1" type="hidden" name="Предствляет">
+						<input class="input-info-2" type="hidden" name="Должность">
+						<input class="input-info-3" type="hidden" name="Объем">
+						<!-- END Hidden Required Fields -->
+						<input class="input-name" name="name" type="text" placeholder="Имя" required>
+						<input class="input-mobile" name="mobile" type="tel" placeholder="Телефон" pattern="[0-9]{9,20}" required>
 						<input class="fill-form--submit" type="submit" value="Отправить">
+					</div>
+					<div class="form-invalid_block">
+						<div class="form-invalid__container">
+							<i class="icon-close-invalid"></i>
+							<p>Пожалуйста, введите данные!</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -214,13 +235,18 @@
 			<div class="order-probes_content clearfix">
 				<img src="img/probes.jpg" alt="" class="order-probes--img">
 				<form class="order-probes__form" method="POST">
+					<!-- Hidden Required Fields -->
+					<input type="hidden" name="project_name" value="IceCream">
+					<input type="hidden" name="admin_email" value="epodgaetskiy@gmail.com">
+					<input type="hidden" name="form_subject" value="Заявка с сайта">
+					<!-- END Hidden Required Fields -->
 					<p>Закажите пробники, и мы привезем вам<br>нашу продукцию уже завтра!</p>
 					<div class="input-wrapper">
-						<input type="text" placeholder="Имя" required>
-						<input type="tel" placeholder="Телефон" required>
+						<input class="input-name" type="text" name="name" placeholder="Имя" required>
+						<input class="input-mobile" type="tel" name="mobile" placeholder="Телефон" pattern="[0-9]{9,20}" required>
 					</div>
 					<img src="img/border-dec-form.png" alt="" class="border-decoration hidden-xs">
-					<input type="submit" value="Отправить">
+					<input class="order-probes--submit" type="submit" value="Отправить">
 					<div class="form-invalid_block">
 						<div class="form-invalid__container">
 							<i class="icon-close-invalid"></i>
@@ -286,11 +312,11 @@
 	<section id="products" class="products">
 		<h3>Наша <p>продукция</p></h3>
 		<div class="container-content">
-			<div class="products_slider hidden-xs">
-				<div class="slider__images clearfix">
+			<div class="products_slider">
+				<div class="slider__images hidden-xs clearfix">
 					<div class="images-small clearfix">
 						<div class="images-small_single">
-							<img class="row-item active" src="img/product-small-img-1.jpg" alt="">
+							<img class="row-item" src="img/product-small-img-1.jpg" alt="">
 						</div>
 						<div class="images-small--wrapper">
 							<div class="images-small_row">
@@ -330,8 +356,51 @@
 						</div>
 					</div>
 				</div>
+				<div class="slider__images--mobile hidden-lg hidden-md hidden-sm clearfix">
+					<button class="btn-product">Мороженное</button>
+					<button class="btn-product">Сорбеты</button>
+					<div class="images-small clearfix">
+						<div class="images-small--wrapper">
+							<div class="images-small_row">
+								<img class="row-item" src="img/product-small-img-1.jpg" alt="">
+								<img src="img/product-small-img-2.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-3.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-4.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-5.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-6.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-7.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-8.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-9.jpg" alt="" class="row-item">
+							</div>
+						</div>
+					</div>
+					<div class="images-small clearfix">
+						<div class="images-small--wrapper">
+							<div class="images-small_row">
+								<img src="img/product-small-img-10.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-11.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-12.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-13.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-14.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-15.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-16.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-17.jpg" alt="" class="row-item">
+								<img src="img/product-small-img-18.jpg" alt="" class="row-item">
+							</div>
+						</div>
+					</div>
+					<div class="image-big">
+						<img src="img/product-full-img-1.jpg" alt="" class="product--full-img">
+					</div>
+				</div>
 				<div class="slider_info">
 					<p class="product--name">Мята с шоколадом</p>
+					<p class="product--type">Пломбир</p>
+					<p class="product--about">For a while, the Kremlin’s look remained red-brick, but in the XVIIIth century it was coated white like any other construction of its sort.</p>
+					<p class="product--info">Молоко, сливки, масло сливочное, молоко сухое обезжиренное, вода питьевая, сахар-песок, глюкоза, мятная паста, кусочки шоколада, стабилизатор-эмульгатор (гуаровая камедь, моно- и диглицериды жирных кислот).</p>
+				</div>
+				<div class="slider_info">
+					<p class="product--name">Мята с шоколадом2</p>
 					<p class="product--type">Пломбир</p>
 					<p class="product--about">For a while, the Kremlin’s look remained red-brick, but in the XVIIIth century it was coated white like any other construction of its sort.</p>
 					<p class="product--info">Молоко, сливки, масло сливочное, молоко сухое обезжиренное, вода питьевая, сахар-песок, глюкоза, мятная паста, кусочки шоколада, стабилизатор-эмульгатор (гуаровая камедь, моно- и диглицериды жирных кислот).</p>
@@ -344,14 +413,24 @@
 		<h3 class="hidden-xs"><p>Возвращаем</p> натуральный вкус</h3>
 		<h3 class="hidden-lg hidden-md hidden-sm"><p>Возвращаем</p><br>натуральный вкус</h3>
 		<form id="contact-form" class="contact_form" method="POST">
+			<!-- Hidden Required Fields -->
+			<input type="hidden" name="project_name" value="IceCream">
+			<input type="hidden" name="admin_email" value="epodgaetskiy@gmail.com">
+			<input type="hidden" name="form_subject" value="Заявка с сайта">
+			<!-- END Hidden Required Fields -->
 			<h5>Остались вопросы?</h5>
 			<p>Напишите сюда свой вопрос, и мы ответим на него в течении 30 минут</p>
-			<input class="input-question hidden-xs" type="text" placeholder="Ваш вопрос">
 			<div class="input--container">
-				<input type="text" placeholder="Имя" required>
-				<input type="tel" placeholder="Телефон" required>
-				<textarea class="hidden-lg hidden-md hidden-sm" name="question" placeholder="Ваш вопрос"></textarea>
-				<input type="submit" value="Отправить">
+				<textarea class="input-question" name="question" placeholder="Ваш вопрос" required></textarea>
+				<input class="input-name" type="text" name="name" placeholder="Имя" required>
+				<input class="input-mobile" type="tel" name="mobile" placeholder="Телефон" pattern="[0-9]{9,20}" required>
+				<input class="contact--submit" type="submit" value="Отправить">
+			</div>
+			<div class="form-invalid_block">
+				<div class="form-invalid__container">
+					<i class="icon-close-invalid"></i>
+					<p>Пожалуйста, введите данные!</p>
+				</div>
 			</div>
 		</form>
 	</section>
@@ -368,13 +447,24 @@
 	<div class="callback-popup">
 		<div class="callback-popup_container">
 			<i class="icon-close"></i>
-			<form class="callback-form">
+			<form class="callback-form" method="POST">
+				<!-- Hidden Required Fields -->
+				<input type="hidden" name="project_name" value="IceCream">
+				<input type="hidden" name="admin_email" value="epodgaetskiy@gmail.com">
+				<input type="hidden" name="form_subject" value="Заявка с сайта">
+				<!-- END Hidden Required Fields -->
 				<p>Обратный звонок</p>
 				<img src="img/border-dec.png" alt="" class="border-decoration hidden-xs" width="110" height="2">
 				<div class="input--container">
-					<input type="text" placeholder="Имя" required>
-					<input type="tel" placeholder="Телефон" required>
-					<input type="submit" value="Отправить">
+					<input class="input-name" type="text" name="name" placeholder="Имя" required>
+					<input class="input-mobile" type="tel" name="mobile" placeholder="Телефон" pattern="[0-9]{9,20}" required>
+					<input class="callback--submit" type="submit" value="Отправить">
+				</div>
+				<div class="form-invalid_block">
+					<div class="form-invalid__container">
+						<i class="icon-close-invalid"></i>
+						<p>Пожалуйста, введите данные!</p>
+					</div>
 				</div>
 			</form>
 		</div>
